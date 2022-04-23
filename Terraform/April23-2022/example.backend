@@ -1,0 +1,6 @@
+tenant_id            = "<Tenant id>"
+subscription_id      = "<Subscription Id>"
+resource_group_name  = "<Storage Account Resource Group>"
+storage_account_name = "<Storage Account Name>"
+container_name       = "<containerName>"
+key                  = "<Storage Account Key>"
