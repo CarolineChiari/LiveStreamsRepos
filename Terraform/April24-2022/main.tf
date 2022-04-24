@@ -15,12 +15,12 @@ provider "azurerm" {
 
 # Create a new resource group for our resources
 resource "azurerm_resource_group" "myRG" {
-  name     = "MyResourceGroup"
+  name     = "${var.prefix}MyResourceGroup"
   location = "eastus"
 }
 
 resource "azurerm_storage_account" "mySA" {
-  name                     = "carolinetesttfsa"
+  name                     = "${var.prefix}carolinesa"
   resource_group_name      = azurerm_resource_group.myRG.name
   location                 = azurerm_resource_group.myRG.location
   account_tier             = "Standard"
