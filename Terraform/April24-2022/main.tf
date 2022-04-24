@@ -1,8 +1,5 @@
 terraform {
   backend "azurerm" {}
-  # backend "local" {
-  #   path = "./main.tfstate"
-  # }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -14,5 +11,18 @@ terraform {
 
 provider "azurerm" {
   features {}
-#   storage_use_azuread = true
+}
+
+# Create a new resource group for our resources
+resource "azurerm_resource_group" "myRG" {
+  name     = "MyResourceGroup"
+  location = "eastus"
+}
+
+resource "azurerm_storage_account" "mySA" {
+  name                     = "carolinetesttfsa"
+  resource_group_name      = azurerm_resource_group.myRG.name
+  location                 = azurerm_resource_group.myRG.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
