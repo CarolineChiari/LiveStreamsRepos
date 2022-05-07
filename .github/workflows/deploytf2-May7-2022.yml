@@ -59,3 +59,7 @@ jobs:
       - name: Terraform Plan
         id: TFPlan
         run: terraform plan -var-file=caroline.tfvars
+
+      - name: Terraform Apply
+        id: TFApply
+        run: terraform apply -var-file=caroline.tfvars -auto-approve
