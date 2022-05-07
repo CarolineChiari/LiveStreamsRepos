@@ -12,7 +12,7 @@ jobs:
     # Environment for Job #1
     name: "Plan Terraform Deployment"
     environment: "example"
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     continue-on-error: false
     env:
       working-directory: ./Terraform/May7-2022/
