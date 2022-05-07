@@ -22,7 +22,8 @@ jobs:
         uses: actions/checkout@v2
       - name: List Files
         shell: pwsh
-        run: get-childitem -recursive
+        run: get-childitem -recurse
+        
       - name: Terraform Setup
         id: TFSetup
         uses: hashicorp/setup-terraform@v1
