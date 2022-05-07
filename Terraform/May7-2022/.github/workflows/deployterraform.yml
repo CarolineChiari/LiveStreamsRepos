@@ -2,7 +2,7 @@ name: "Terraform workflow"
 
 on:
   push:
-    branches: [main]
+    branches: [Main,May-6-2022]
   
 jobs:
   TerraformPlan:
